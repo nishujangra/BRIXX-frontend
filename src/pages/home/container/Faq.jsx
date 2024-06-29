@@ -2,18 +2,18 @@ import React from 'react';
 import FaqItem from '../../../components/FaqItem';
 
 const faqs = [
-    {
-        question: 'What is the event about?',
-        answer: 'The event is about the Culymca.'
-    },
-    {
-        question: 'What is the event date?',
-        answer: 'The event date is 2024-09-21.'
-    },
-    {
-        question: 'Where is the event location?',
-        answer: 'The event location is at JC Bose University of Science and Technology.'
-    }
+  {
+    question: 'What is the event about?',
+    answer: 'The event is about the Culymca.'
+  },
+  {
+    question: 'What is the event date?',
+    answer: 'The event date is 2024-09-21.'
+  },
+  {
+    question: 'Where is the event location?',
+    answer: 'The event location is at JC Bose University of Science and Technology.'
+  }
 ];
 
 

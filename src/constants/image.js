@@ -1,4 +1,4 @@
-import BG from '../assets/images/bg.jpg';
+import BG from "../assets/images/bg.jpg"
 
 const images = {
     BG
