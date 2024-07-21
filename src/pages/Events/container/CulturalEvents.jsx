@@ -1,72 +1,45 @@
-import React from 'react';
-import EventCard from '../../../components/EventCard/EventCard';
+import React, { useState } from 'react';
+import Events from '../../../components/Events';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import images from '../../../constants/image';
+
+
 const event = [
     {
         id: 1,
-        imglink: '/assets/images/landscape-1.png',
+        imgurl: "EVENT1",
         title: 'PANKAJ',
-        subtitle: 'FEST THTHR',
-        info:
-            'Short paragraphs are easier to read and understand. Writing experts recommend paragraphs of no more than 150 words in three interesting',
-        btnbody: 'INFO',
+        subtitle: 'Subtile',
+
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!'
     },
     {
         id: 2,
-        imglink: '/assets/images/landscape-1.png',
+        imgurl: "EVENT2",
         title: 'PANKAJ',
-        subtitle: 'FEST THTHR',
-        info:
-            'Short paragraphs are easier to read and understand. Writing experts recommend paragraphs of no more than 150 words in three interesting',
-        btnbody: 'INFO',
+        subtitle: 'Subtile',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!'
     },
     {
         id: 3,
-        imglink: '/assets/images/landscape-1.png',
+        imgurl: "BG",
         title: 'PANKAJ',
-        subtitle: 'FEST THTHR',
-        info:
-            'Short paragraphs are easier to read and understand. Writing experts recommend paragraphs of no more than 150 words in three interesting',
-        btnbody: 'INFO',
-    },
-    {
-        id: 4,
-        imglink: '/assets/images/landscape-1.png',
-        title: 'PANKAJ',
-        subtitle: 'FEST THTHR',
-        info:
-            'Short paragraphs are easier to read and understand. Writing experts recommend paragraphs of no more than 150 words in three interesting',
-        btnbody: 'INFO',
-    },
-    {
-        id: 5,
-        imglink: '/assets/images/landscape-1.png',
-        title: 'PANKAJ',
-        subtitle: 'FEST THTHR',
-        info:
-            'Short paragraphs are easier to read and understand. Writing experts recommend paragraphs of no more than 150 words in three interesting',
-        btnbody: 'INFO',
-    },
-    {
-        id: 6,
-        imglink: '/assets/images/landscape-1.png',
-        title: 'PANKAJ',
-        subtitle: 'FEST THTHR',
-        info:
-            'Short paragraphs are easier to read and understand. Writing experts recommend paragraphs of no more than 150 words in three interesting',
-        btnbody: 'INFO',
+        subtitle: 'Subtile',
+        description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!'
     },
 ];
 
 const NextArrow = (props) => {
     const { onClick } = props;
     return (
-        <div className="flex items-center justify-center absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white w-16 h-16 rounded-full cursor-pointer z-10 right-2" onClick={onClick}>
-            <FaArrowRight size={30} className="text-white" />
+        <div
+            className="flex items-center h-20 w-8 justify-center absolute top-1/2 transform cursor-pointer right-2 z-10"
+            onClick={onClick}
+        >
+            <FiChevronRight size={50} className="text-black" />
         </div>
     );
 };
@@ -74,13 +47,18 @@ const NextArrow = (props) => {
 const PrevArrow = (props) => {
     const { onClick } = props;
     return (
-        <div className="flex items-center justify-center absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white w-16 h-16 rounded-full cursor-pointer z-10 left-4" onClick={onClick}>
-            <FaArrowLeft size={30} className="text-white" />
+        <div
+            className="flex items-center h-20 w-8 justify-center absolute top-1/2 cursor-pointer left-2 z-10"
+            onClick={onClick}
+        >
+            <FiChevronLeft size={50} className="text-black" />
         </div>
     );
 };
 
 const CulturalEvents = () => {
+    const [bgImage, setBgImage] = useState(images[event[1].imgurl]);
+
     const settings = {
         dots: false,
         infinite: true,
@@ -92,7 +70,11 @@ const CulturalEvents = () => {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         autoplay: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 3000,
+        beforeChange: (current, next) => {
+            const centerIndex = (current + 2) % event.length;
+            setBgImage(images[event[centerIndex].imgurl]);
+        },
         responsive: [
             {
                 breakpoint: 768,
@@ -110,50 +92,36 @@ const CulturalEvents = () => {
     };
 
     return (
-        <div className="overflow-hidden">
-            <h1 className="text-4xl font-bold text-center py-10">Cultural Events</h1>
-            <div className="px-4 md:px-20 relative">
+        <div
+            className="relative overflow-hidden bg-cover bg-center h-screen"
+            style={{
+                backgroundImage: `url(${bgImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                objectFit: 'cover',
+            }}
+        >
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <h1 className="relative text-2xl md:text-4xl font-bold text-center pt-10 text-white z-20">
+                Cultural Events
+            </h1>
+            <div className="relative z-20 pt-10 px-4 sm:px-8 md:px-12 lg:px-16">
                 <Slider {...settings} className="slick-slider">
                     {event.map((e) => (
                         <div key={e.id} className="px-2">
-                            <EventCard
-                                imglink="BG"
+                            <Events
+                                imgurl={e.imgurl}
                                 title={e.title}
                                 subtitle={e.subtitle}
-                                info={e.info}
-                                btnbody={e.btnbody}
+                                description={e.description}
                             />
                         </div>
                     ))}
                 </Slider>
-                <style>
-                    {`
-            .slick-slider {
-              @apply w-full perspective-1000;
-            }
-
-            .slick-list {
-              @apply overflow-visible;
-            }
-
-            .slick-slide {
-              @apply flex justify-center items-center transition-transform duration-500 ease;
-            }
-
-            .slick-slide.slick-center {
-              @apply transform scale-125 translate-z-100;
-              z-index: 1;
-            }
-
-            .slick-slide:not(.slick-center) {
-              @apply transform scale-80 translate-z-(-100) opacity-70;
-            }
-          `}
-                </style>
             </div>
         </div>
     );
 };
 
-
 export default CulturalEvents
+

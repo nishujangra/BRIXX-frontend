@@ -1,37 +1,23 @@
-import React, { useState, useEffect } from 'react';
-const image_urls = [
-
-];
+import React from 'react';
+import images from '../../../constants/image';
 
 const Hero = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % image_urls.length);
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
-  }, []);
-
   return (
-    <div className="flex flex-col md:flex-row mx-8 px-4 py-8 my-12 gap-4 shadow-lg shadow-white">
-      <div className="w-full md:w-1/2 text-lg leading-relaxed">
-        <h1 className="text-2xl font-bold mb-4">
-          Culaiyca
-        </h1>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!
+    <div className="relative h-screen flex flex-col">
+      <div className="absolute w-full h-full ">
+        <img src={images.BG} alt="Background" className="w-full h-full object-cover opacity-50" />
+      </div>
+      <div className="absolute text-white py-20 px-10 lg:px-20 flex flex-col justify-center items-center lg:justify-start lg:items-start h-full w-full ">
+        <h1 className="text-4xl lg:text-6xl font-extrabold mb-4 animate-bounce-slow">Elements Culymca</h1>
+        <p className="text-xl lg:text-2xl mb-8 animate-fade-in w-full lg:w-96 text-center lg:text-left">
+          Join us for an unforgettable experience filled with music, food, and fun! <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis omnis id delectus, eius dolorem odit temporibus? Soluta dolorem rem quae rerum alias!
         </p>
+        <button className="lg:animate-bounce-slow hover:lg:animate-none mt-5 lg:mt-0 border-2 rounded-full border-white px-6 py-2 text-white font-semibold hover:bg-[#EEEDEB] hover:text-dark-hard transition-all">
+          Get Passes
+        </button>
       </div>
-      <div className="w-full md:w-1/2 h-64 md:h-96 flex justify-center items-center">
-        <img
-          src={image_urls[currentImageIndex]}
-          alt="Slideshow img"
-          className="rounded-lg shadow-lg object-cover w-full h-full"
-        />
-      </div>
-    </div>
+    </div >
   );
 };
 

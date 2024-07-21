@@ -7,7 +7,7 @@ const EventPage = () => {
     return (
         <MainLayout>
             <TechnicalEvents />
-            <CulturalEvents ></CulturalEvents>
+            <CulturalEvents />
         </MainLayout>
     )
 }

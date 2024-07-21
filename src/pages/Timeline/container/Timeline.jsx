@@ -91,7 +91,7 @@ const timelineEvents = [
             description: 'Engage in an insightful panel discussion with experts.',
         },
         {
-            time: '07:00 PM',
+            time: '09:00 PM',
             title: 'Closing Ceremony',
             description: 'The fest concludes with a closing ceremony and awards.',
         }]

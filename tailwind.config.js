@@ -18,7 +18,10 @@ module.exports = {
           openSans: ["Open Sans", "sans-serif"],
           roboto: ["Roboto", "sans-serif"],
         },
-      }
+      },
+      animation: {
+        'bounce-slow': 'bounce 4s infinite', // Adjust the duration as needed
+      },
     },
   },
   plugins: [],
