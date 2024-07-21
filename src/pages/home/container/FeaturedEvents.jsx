@@ -55,8 +55,7 @@ const PrevArrow = (props) => {
 };
 
 const FeaturedEvents = () => {
-  const [currentBgImage, setCurrentBgImage] = useState(images[event[1].imgurl]);
-  const [hlo, sethlo] = useState(images[event[0].imgurl]);
+  const [currentBgImage, setCurrentBgImage] = useState(images[event[0].imgurl]);
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
@@ -71,7 +70,7 @@ const FeaturedEvents = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 3000,
     slidesToShow: 3,
     centerMode: true,
     centerPadding: '0',
@@ -81,11 +80,9 @@ const FeaturedEvents = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     beforeChange: (current, next) => {
-      const centerIndex = (next + 1) % event.length;
-      const nextIndex = (centerIndex + event.length - 1) % event.length;
+      const centerIndex = (next + Math.floor(event.length / 2)) % event.length;
       setFade(true);
       setCurrentBgImage(images[event[centerIndex].imgurl]);
-      sethlo(images[event[nextIndex].imgurl]);
     },
     responsive: [
       {
@@ -102,9 +99,6 @@ const FeaturedEvents = () => {
   return (
     <div className="relative overflow-hidden bg-cover bg-center h-screen">
       <div className={`absolute inset-0 transition-opacity duration-1000 ${fade ? 'opacity-0' : 'opacity-100'}`} style={{ backgroundImage: `url(${currentBgImage})`, backgroundSize: 'cover', backgroundPosition: 'center', objectFit: 'cover' }}></div>
-      {fade &&
-        <div className={`absolute inset-0 transition-opacity duration-1000  ${!fade ? 'opacity-0' : 'opacity-100'}`} style={{ backgroundImage: `url(${hlo})`, backgroundSize: 'cover', backgroundPosition: 'center', objectFit: 'cover' }}></div>
-      }
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <h1 className="relative text-4xl font-bold text-center pt-5 text-white z-20">Featured Events</h1>
       <div className="relative z-20 mt-10">
