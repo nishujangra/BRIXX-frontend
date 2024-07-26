@@ -15,10 +15,10 @@ const Location = () => {
     return (
         <div
             className={`bg-white text-black flex flex-col ${hover ? 'bg-slate-800' : ''} md:flex-row py-8 px-8 h-screen overflow-auto`}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
         >
-            <div className='flex flex-row w-full mx-8'>
+            <div className='flex flex-row w-full mx-8'
+                onMouseEnter={() => setHover(true)}
+                onMouseLeave={() => setHover(false)}>
                 <div className='w-full'>
                     <h2 className='text-2xl font-bold mb-4'>Get Directions</h2>
                     <div className='relative mt-24 hover:mt-24 duration-1300'
@@ -47,12 +47,15 @@ const Location = () => {
                     </button>
                 </div>
             </div>
-            <div className={`w-full ${hover ? 'hidden' : 'block'} transition duration-300`}>
-                <h1 className='text-4xl'>Hello</h1>
-                <div className='p-4'>
-                    <img src={images.BG} alt="Background" />
+            <div className={`w-full ${hover ? 'hidden' : 'block'} transition overflow-hidden duration-300 flex flex-col justify-center items-center`}>
+                <h1 className='text-4xl -mt-20'>Welcome</h1>
+                <div className='w-full md:w-3/4 lg:w-1/2 p-4 -mt-28'>
+                    <video autoPlay loop muted className='w-full rounded-lg aspect-[1/2]' style={{ transform: 'rotate(270deg)' }}>
+                        <source src={images.Video} type="video/mp4" />
+                    </video>
                 </div>
-                <p className='text-2xl'>kjikkfnvndk</p>
+                <div className='text-2xl -mt-28 text-center'>Explore our campus through this video!<br />bhvewukhkenkn</div>
+
             </div>
         </div>
     );

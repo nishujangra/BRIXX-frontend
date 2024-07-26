@@ -105,6 +105,17 @@ const Timeline = () => {
 
     return (
         <div className='flex flex-col'>
+            <div className="flex justify-center gap-4 my-6">
+                {timelineEvents.map((_, index) => (
+                    <button
+                        key={index}
+                        className={`mt-5 mr-6 lg:mt-0 border-2 rounded-full border-white-500 px-6 py-2 text-white-500 font-semibold ${currentDay === index ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
+                        onClick={() => handleDayChange(index)}
+                    >
+                        Day {index + 1}
+                    </button>
+                ))}
+            </div>
             <div className="max-w-2xl mx-auto my-10 p-5 bg-dark-soft rounded-lg shadow-lg shadow-white gap-y-10">
                 <h2 className="text-2xl font-bold text-center mb-6 text-white">Fest Day {currentDay + 1}</h2>
                 <div className="border-l-4 border-r-4 border-white px-4">
@@ -118,17 +129,7 @@ const Timeline = () => {
                     ))}
                 </div>
             </div>
-            <div className="flex justify-center gap-4 my-6">
-                {timelineEvents.map((_, index) => (
-                    <button
-                        key={index}
-                        className={`mt-5 mr-6 lg:mt-0 border-2 rounded-full border-white-500 px-6 py-2 text-white-500 font-semibold ${currentDay === index ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}
-                        onClick={() => handleDayChange(index)}
-                    >
-                        Day {index + 1}
-                    </button>
-                ))}
-            </div>
+
         </div>
     );
 };
