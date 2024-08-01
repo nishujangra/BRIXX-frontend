@@ -69,7 +69,7 @@ const Performances = () => {
                                     alt={`${sponsor.name} Logo`}
                                     className="mb-2 "
                                 />
-                                <p className="text-xl font-semibold mt-auto">{sponsor.name}</p>
+                                {/* <p className="text-xl font-semibold mt-auto">{sponsor.name}</p> */}
                             </div>
                         </div>
                     ))}
