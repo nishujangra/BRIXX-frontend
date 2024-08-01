@@ -4,7 +4,7 @@ import HomePage from './pages/home/HomePage';
 import EventPage from './pages/Events/EventPage';
 import Signup from './pages/Sign/Signup';
 import TimelinePage from './pages/Timeline/TimelinePage';
-
+import EventDetails from './components/Event_detail';
 function App() {
   return (
     <div className="App bg-dark-soft text-white overflow-hidden">
@@ -13,6 +13,7 @@ function App() {
         <Route path="/events" element={<EventPage />} />
         <Route path="/sign" element={<Signup />} />
         <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/event-details" element={<EventDetails />} />
       </Routes>
     </div>
   );

@@ -14,7 +14,7 @@ const Location = () => {
 
     return (
         <div
-            className={`bg-white text-black flex flex-col ${hover ? 'bg-slate-800' : ''} md:flex-row py-8 px-8 h-screen overflow-auto`}
+            className={` text-black flex flex-col ${hover ? 'bg-slate-400' : 'bg-white'} md:flex-row py-8 px-8 h-screen overflow-auto`}
         >
             <div className='flex flex-row w-full mx-8'
                 onMouseEnter={() => setHover(true)}

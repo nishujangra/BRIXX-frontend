@@ -57,9 +57,9 @@ const Performances = () => {
     };
 
     return (
-        <div className="text-white touch-pan-up h-screen">
+        <div className="text-black touch-pan-up  py-10 bg-white">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold mb-8 text-center">Past Performances</h2>
+                <h2 className="text-3xl font-bold mb-16 text-center">Past Performances</h2>
                 <Slider {...settings} className="slider-container mx-auto">
                     {sponsors.map((sponsor, index) => (
                         <div key={index} className="px-4">

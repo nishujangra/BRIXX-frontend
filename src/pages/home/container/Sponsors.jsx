@@ -3,80 +3,116 @@ import images from '../../../constants/image';
 
 const mainSponsors = [
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's1',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's2',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's3',
         web: 'https://example.com'
     }
 ];
 
 const midSponsors = [
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's4',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's5',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's6',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's7',
         web: 'https://example.com'
     }
 ];
 
 const lowSponsors = [
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's8',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's9',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's10',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's11',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's12',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's3',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's14',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's15',
         web: 'https://example.com'
     },
     {
-        imgUrl: 'SPONSER',
+        imgUrl: 's16',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's17',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's18',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's19',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's20',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's21',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's22',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's23',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's24',
+        web: 'https://example.com'
+    },
+    {
+        imgUrl: 's25',
         web: 'https://example.com'
     }
 ];
 
 const Sponsors = () => {
     return (
-        <div className="text-white touch-pan-up py-12">
+        <div className="text-black touch-pan-up py-12 bg-white">
             <div className="container mx-auto">
                 <h2 className="text-3xl font-bold mb-8 text-center">Main Sponsors</h2>
 
@@ -93,7 +129,7 @@ const Sponsors = () => {
                         <img
                             src={images[sponsor.imgUrl]}
                             alt="Sponsor"
-                            className="w-40 h-40 mb-2 rounded-full border-2 border-white"
+                            className="w-40 h-40 mb-2 rounded-full "
                         />
                         // {/* </a> */}
                     ))}
@@ -112,14 +148,14 @@ const Sponsors = () => {
                         <img
                             src={images[sponsor.imgUrl]}
                             alt="Sponsor"
-                            className="w-32 h-32 mb-2 rounded-full border-2 border-white"
+                            className="w-[56] h-[56] mb-2 rounded-full"
                         />
                         // {/* </a> */ }
                     ))}
                 </div>
                 <h2 className="text-3xl font-bold mb-8 text-center">Low Sponsors</h2>
                 {/* Low Sponsors */}
-                <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 justify-items-center">
+                <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 justify-items-center px-10">
                     {lowSponsors.map((sponsor, index) => (
                         // <a
                         //     key={index}
@@ -131,7 +167,7 @@ const Sponsors = () => {
                         <img
                             src={images[sponsor.imgUrl]}
                             alt="Sponsor"
-                            className="w-24 h-24 mb-4 rounded-full border-2 border-white "
+                            className="w-48 h-48 mb-4 rounded-full"
                         />
                         // </a>
                     ))}

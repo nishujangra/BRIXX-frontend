@@ -12,21 +12,39 @@ const event = [
     imgurl: "EVENT1",
     title: 'PANKAJ',
     subtitle: 'Subtitle',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!'
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!',
+    teamSize: 4,
+    Rules: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum"
+    ]
   },
   {
     id: 2,
     imgurl: "EVENT2",
     title: 'PANKAJ',
     subtitle: 'Subtitle',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!'
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!',
+    teamSize: 4,
+    Rules: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum"
+    ]
   },
   {
     id: 3,
     imgurl: "BG",
     title: 'PANKAJ',
     subtitle: 'Subtitle',
-    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!'
+    description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum quam eligendi quasi? A tempore repudiandae, laborum, magnam, recusandae exercitationem velit fugit hic sequi ad possimus consequatur!',
+    teamSize: 4,
+    Rules: [
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum",
+      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum omnis, ratione atque dolorum"
+    ]
   },
 ];
 
@@ -110,6 +128,8 @@ const FeaturedEvents = () => {
                 title={e.title}
                 subtitle={e.subtitle}
                 description={e.description}
+                teamSize={e.teamSize}
+                Rules={e.Rules}
               />
             </div>
           ))}

@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import 'react-toastify/dist/ReactToastify.css';
 import images from '../constants/image';
 
-
-const Events = ({ imgurl, title, subtitle, description }) => {
+const Events = ({ imgurl, title, subtitle, description, teamSize, Rules }) => {
     return (
         <div className="flex justify-center py-10 h-auto hover:-translate-y-8 duration-300">
-            <div className="relative max-w-sm w-80 h-96 shadow-lg rounded-lg  overflow-hidden group">
+            <div className="relative max-w-sm w-80 h-96 shadow-lg rounded-lg overflow-hidden group">
                 <div
                     className="relative w-80 h-96 bg-cover bg-center z-10 transition duration-300 group-hover:blur-sm"
                     style={{ backgroundImage: `url(${images[imgurl]})` }}
@@ -22,12 +22,16 @@ const Events = ({ imgurl, title, subtitle, description }) => {
                         <p className="text-base transition-transform duration-300">
                             {description}
                         </p>
-                        <button
-                            className="bg-blue-500 text-white font-bold mt-2 py-2 px-4 rounded duration-300 hover:bg-white hover:text-black"
-                            onClick={() => toast.success('Registered successfully!')}
+                        <Link
+                            to={`/event-details?imgurl=${encodeURIComponent(images[imgurl])}&title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(subtitle)}&description=${encodeURIComponent(description)}&teamSize=${encodeURIComponent(teamSize)}&Rules=${encodeURIComponent(JSON.stringify(Rules))}`}
                         >
-                            Register
-                        </button>
+                            <button
+                                className="bg-blue-500 text-white font-bold mt-2 py-2 px-4 rounded duration-300 hover:bg-white hover:text-black"
+                            // onClick={() => toast.success('Registered successfully!')}
+                            >
+                                Register
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
