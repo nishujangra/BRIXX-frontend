@@ -42,7 +42,7 @@ const Header = () => {
         <section className='top-0 left-0 right-0 bg-dark-soft text-white z-50'>
             <header className='container mx-auto flex items-center justify-between py-4 px-4 lg:px-0'>
                 <div className='flex items-center justify-center lg:justify-start'>
-                    <h1 className='text-2xl'><img src="/static/media/logo.png" alt="logo" width="50" height="60"></h1>
+                    <h1 className='text-2xl'>LOGO</h1>
                 </div>
 
                 <div className="lg:hidden flex flex-row-reverse z-50 text-white">
